@@ -46,6 +46,7 @@ test {
     useJUnitPlatform()
 }
 
+// https://github.com/GoogleContainerTools/jib/tree/master/jib-gradle-plugin#quickstart
 jib {
     from {
         image = 'openjdk:8-jdk-alpine'
