@@ -10,7 +10,7 @@ spring:
     hibernate:
       ddl-auto: create-drop
   flyway:
-    baseline-on-migrate: false
+    enabled: false
 
 logging:
   level:
