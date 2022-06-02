@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SubwayGraph extends WeightedMultigraph<Station, SectionEdge> {
-    public SubwayGraph(Class edgeClass) {
+    private static final long serialVersionUID = 2760818133639395653L;
+
+    public SubwayGraph(Class<SectionEdge> edgeClass) {
         super(edgeClass);
     }
 
@@ -25,7 +27,7 @@ public class SubwayGraph extends WeightedMultigraph<Station, SectionEdge> {
     public void addEdge(List<Line> lines) {
         // 지하철 역의 연결 정보(간선)을 등록
         for (Line line : lines) {
-            line.getSections().stream()
+            line.getSections()
                     .forEach(it -> addEdge(it, line));
         }
     }
